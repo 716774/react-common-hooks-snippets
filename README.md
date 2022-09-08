@@ -2,6 +2,8 @@
 
 Visual Studio Code extension
 
+![https://github.com/716774/react-common-hooks-snippets/raw/main/images/preview.gif](https://github.com/716774/react-common-hooks-snippets/raw/main/images/preview.gif)
+
 ### import
 
 | prefix | body                                       |
