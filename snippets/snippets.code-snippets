@@ -1,0 +1,145 @@
+{
+  "import react module": {
+    "prefix": "~im",
+    "body": [
+      "import React, { $1 } from 'react';"
+    ],
+  },
+  "import react hooks module": {
+    "prefix": "~imh",
+    "body": [
+      "import React, { useEffect, useCallback, useMemo, useState, useContext$1 } from 'react';"
+    ],
+  },
+  "useState hook": {
+    "prefix": "~us",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState(${2|null,0,'',false,[],{}|});"
+    ],
+  },
+  "useState hook ts": {
+    "prefix": "~usts",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<${2|any,string,number,boolean|}>(${3:null});"
+    ],
+  },
+  "useContext hook": {
+    "prefix": "~uc",
+    "body": [
+      "const ${1:value} = useContext(${2:MyContext});"
+    ],
+    "description": "~"
+  },
+  "useRef hook": {
+    "prefix": "~ur",
+    "body": [
+      "const ${1:refContainer} = useRef(${2:null});"
+    ],
+  },
+  "useEffect hook": {
+    "prefix": "~ue",
+    "body": [
+      "useEffect(() => {",
+      "  $1",
+      "}, [$2]);"
+    ],
+  },
+  "useEffect hook return": {
+    "prefix": "~uer",
+    "body": [
+      "useEffect(() => {",
+      "  return () => {",
+      "    $1",
+      "  }",
+      "}, []);"
+    ],
+  },
+  "useMemo hook": {
+    "prefix": "~um",
+    "body": [
+      "const ${1:memoizedValue} = useMemo(() => ${2:computeExpensiveValue}(${3:a}, ${4:b}), [${5:a}, ${6:b}]);"
+    ],
+  },
+  "useCallback hook": {
+    "prefix": "~ucb",
+    "body": [
+      "const ${1:memoizedCallback} = useCallback(",
+      "  () => {",
+      "    ${2:doSomething}(${3:a}, ${4:b});",
+      "  },",
+      "  [${5:a}, ${6:b}],",
+      ");"
+    ],
+  },
+  "useDeferredValue hook": {
+    "prefix": "~udv",
+    "body": [
+      "const ${1:deferredValue} = useDeferredValue(${2:value});"
+    ],
+  },
+  "useId hook": {
+    "prefix": "~uid",
+    "body": [
+      "const ${1:id} = useId();"
+    ],
+  },
+  "useTransition hook": {
+    "prefix": "~ut",
+    "body": [
+      "const [${1:isPending}, ${2:startTransition}] = useTransition();"
+    ],
+  },
+  "useReducer hook": {
+    "prefix": "~urd",
+    "body": [
+      "const [${1:state}, ${2:dispatch}] = useReducer(${3:reducer}, ${4:initialArg}, ${5:init});"
+    ],
+  },
+  "component function": {
+    "prefix": "~comp",
+    "body": [
+      "import React, { useState, useEffect } from 'react';",
+      "",
+      "export default function ${1:Comp}() {",
+      "  return (",
+      "    <>",
+      "      ${1:comp}",
+      "    </>",
+      "  )",
+      "}"
+    ]
+  },
+  "Inline If": {
+    "prefix": "~if",
+    "body": [
+      "{${1:condition} &&",
+      "  $2",
+      "}"
+    ],
+  },
+  "Inline If-Else": {
+    "prefix": "~ife",
+    "body": [
+      "{${1:condition}",
+      "  ? $2",
+      "  : $3",
+      "}"
+    ],
+  },
+  "Rendering Multiple": {
+    "prefix": "~map",
+    "body": [
+      "{${1:list}.map((item) =>",
+      "  $2",
+      ")}"
+    ],
+  },
+  "Rendering Multiple and Key": {
+    "prefix": "~mapk",
+    "body": [
+      "{${1:list}.map((item, index) =>",
+      "  $2",
+      ")}"
+    ],
+  }
+}
